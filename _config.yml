@@ -1,0 +1,44 @@
+title: "Free Online Tools Hub"
+description: "Discover the best free online tools for productivity, AI, design, and development. Boost your workflow with our curated collection."
+baseurl: "/free-online-tools-hub"
+url: "https://vinod1000.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO
+author: "Free Tools Hub"
+twitter:
+  username: quicktoolify
+  card: summary_large_image
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Free Tools Hub"
+
+# Exclude
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
