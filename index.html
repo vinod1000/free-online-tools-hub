@@ -1,0 +1,52 @@
+---
+layout: default
+title: "Free Online Tools Hub - Productivity & AI Tools"
+description: "Discover the best free online tools for productivity, AI, design, and development. Boost your workflow with our curated collection."
+---
+
+<div class="home">
+  <h1 class="page-heading">Latest Tool Reviews & Guides</h1>
+  
+  <div class="hero-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
+    <h2 style="margin: 0; font-size: 2.5rem; font-weight: 700;">🚀 Free Online Tools Hub</h2>
+    <p style="font-size: 1.2rem; margin: 1rem 0;">Discover powerful free tools to boost your productivity</p>
+    <a href="https://quicktoolify.com" style="background: white; color: #667eea; padding: 0.8rem 2rem; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">Explore All Tools →</a>
+  </div>
+
+  <div class="post-list">
+    {% for post in site.posts %}
+      <article class="post-preview" style="border: 1px solid #e1e8ed; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h2 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">
+          <a href="{{ post.url | relative_url }}" style="color: #333; text-decoration: none;">{{ post.title | escape }}</a>
+        </h2>
+        
+        <p class="post-meta" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          {% if post.categories.size > 0 %}
+            • Categories: 
+            {% for category in post.categories %}
+              <span style="background: #f0f0f0; padding: 0.2rem 0.5rem; border-radius: 3px; font-size: 0.8rem;">{{ category }}</span>
+            {% endfor %}
+          {% endif %}
+        </p>
+        
+        {% if post.excerpt %}
+          <p style="color: #555; line-height: 1.6;">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+        
+        <a href="{{ post.url | relative_url }}" style="color: #667eea; font-weight: bold; text-decoration: none;">Read More →</a>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="cta-section" style="background: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center; margin-top: 2rem;">
+    <h3 style="color: #333; margin-bottom: 1rem;">🔗 Discover More Free Tools</h3>
+    <p style="color: #666; margin-bottom: 1.5rem;">Visit QuickToolify.com for 100+ free online tools</p>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <a href="https://quicktoolify.com/ai-tools" style="background: #667eea; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">AI Tools</a>
+      <a href="https://quicktoolify.com/productivity" style="background: #764ba2; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Productivity</a>
+      <a href="https://quicktoolify.com/design" style="background: #f093fb; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Design</a>
+      <a href="https://quicktoolify.com/developer" style="background: #4facfe; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Developer</a>
+    </div>
+  </div>
+</div>
