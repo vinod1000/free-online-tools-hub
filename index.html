@@ -1,52 +1,110 @@
----
-layout: default
-title: "Free Online Tools Hub - Productivity & AI Tools"
-description: "Discover the best free online tools for productivity, AI, design, and development. Boost your workflow with our curated collection."
----
-
-<div class="home">
-  <h1 class="page-heading">Latest Tool Reviews & Guides</h1>
-  
-  <div class="hero-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem; text-align: center;">
-    <h2 style="margin: 0; font-size: 2.5rem; font-weight: 700;">🚀 Free Online Tools Hub</h2>
-    <p style="font-size: 1.2rem; margin: 1rem 0;">Discover powerful free tools to boost your productivity</p>
-    <a href="https://quicktoolify.com" style="background: white; color: #667eea; padding: 0.8rem 2rem; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 1rem;">Explore All Tools →</a>
-  </div>
-
-  <div class="post-list">
-    {% for post in site.posts %}
-      <article class="post-preview" style="border: 1px solid #e1e8ed; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <h2 style="margin: 0 0 0.5rem 0; font-size: 1.5rem;">
-          <a href="{{ post.url | relative_url }}" style="color: #333; text-decoration: none;">{{ post.title | escape }}</a>
-        </h2>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickToolify Blog Automation</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .status { font-size: 1.2rem; margin: 1rem 0; }
+        .button {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 1rem;
+            transition: transform 0.2s;
+        }
+        .button:hover { transform: translateY(-2px); }
+        .links { margin-top: 2rem; }
+        .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .links a:hover { background: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 QuickToolify Blog Automation</h1>
+        <div class="status">✅ Status: Running</div>
+        <div class="status">📅 Schedule: 9 AM & 8 PM Daily</div>
+        <div class="status">🌐 Publishing to GitHub Pages</div>
         
-        <p class="post-meta" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
-          {% if post.categories.size > 0 %}
-            • Categories: 
-            {% for category in post.categories %}
-              <span style="background: #f0f0f0; padding: 0.2rem 0.5rem; border-radius: 3px; font-size: 0.8rem;">{{ category }}</span>
-            {% endfor %}
-          {% endif %}
-        </p>
+        <button class="button" onclick="generateNow()">Generate Post Now</button>
         
-        {% if post.excerpt %}
-          <p style="color: #555; line-height: 1.6;">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        {% endif %}
+        <div class="links">
+            <a href="https://vinod1000.github.io/free-online-tools-hub" target="_blank">View Blog</a>
+            <a href="https://quicktoolify.com" target="_blank">QuickToolify.com</a>
+        </div>
         
-        <a href="{{ post.url | relative_url }}" style="color: #667eea; font-weight: bold; text-decoration: none;">Read More →</a>
-      </article>
-    {% endfor %}
-  </div>
-
-  <div class="cta-section" style="background: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center; margin-top: 2rem;">
-    <h3 style="color: #333; margin-bottom: 1rem;">🔗 Discover More Free Tools</h3>
-    <p style="color: #666; margin-bottom: 1.5rem;">Visit QuickToolify.com for 100+ free online tools</p>
-    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-      <a href="https://quicktoolify.com/ai-tools" style="background: #667eea; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">AI Tools</a>
-      <a href="https://quicktoolify.com/productivity" style="background: #764ba2; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Productivity</a>
-      <a href="https://quicktoolify.com/design" style="background: #f093fb; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Design</a>
-      <a href="https://quicktoolify.com/developer" style="background: #4facfe; color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none;">Developer</a>
+        <div id="result" style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 10px; display: none;"></div>
     </div>
-  </div>
-</div>
+
+    <script>
+        async function generateNow() {
+            const button = document.querySelector('.button');
+            const result = document.getElementById('result');
+            
+            button.textContent = 'Generating...';
+            button.disabled = true;
+            
+            try {
+                const response = await fetch('/api/generate', {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    result.innerHTML = `
+                        <h3>✅ Success!</h3>
+                        <p><strong>Topic:</strong> ${data.topic}</p>
+                        <p><strong>Internal Links:</strong> ${data.links}</p>
+                        <p>Post will be live in 2-3 minutes!</p>
+                    `;
+                } else {
+                    result.innerHTML = `<h3>❌ Error:</h3><p>${data.error}</p>`;
+                }
+                
+                result.style.display = 'block';
+            } catch (error) {
+                result.innerHTML = `<h3>❌ Error:</h3><p>${error.message}</p>`;
+                result.style.display = 'block';
+            }
+            
+            button.textContent = 'Generate Post Now';
+            button.disabled = false;
+        }
+    </script>
+</body>
+</html>
